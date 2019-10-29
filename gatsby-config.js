@@ -1,42 +1,27 @@
+/**
+ * Configure your Gatsby site with this file.
+ *
+ * See: https://www.gatsbyjs.org/docs/gatsby-config/
+ */
+
 module.exports = {
-  siteMetadata: {
-    title: 'Gatsby Starter Blog',
-    author: 'konsumer',
-    authorLink: 'https://github.com/konsumer',
-    disqus: 'gatsby-starter-blog'// put your disqus ID here
-  },
+  /* Your site config here */
   plugins: [
+    `gatsby-plugin-netlify-cms`,
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/pages`,
-        name: 'pages'
-      }
+        path: `${__dirname}/content/blog`,
+        name: `blog`,
+      },
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/examples`,
-        name: 'examples'
-      }
+        path: `${__dirname}/content/assets`,
+        name: `assets`,
+      },
     },
-    {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        plugins: [
-          'gatsby-remark-prismjs',
-          'gatsby-remark-copy-linked-files'
-        ]
-      }
-    },
-    'gatsby-plugin-offline',
-    'gatsby-plugin-react-helmet',
-    {
-      resolve: 'gatsby-plugin-sass',
-      options: {
-        includePaths: [`${__dirname}/node_modules`, `${__dirname}/src/`],
-        precision: 8
-      }
-    }
+    `gatsby-transformer-remark`,
   ]
-}
+};
