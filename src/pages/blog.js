@@ -5,7 +5,7 @@ class Blog extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMdx.edges
+    const posts = data.allMarkdownRemark.edges
 
     return (
       <div>
