@@ -6,6 +6,16 @@
 
 module.exports = {
   /* Your site config here */
+  siteMetadata: {
+    // edit below
+    title: `The Blog`,
+    author: `Smit Modi`,
+    description: `A personal blog with Netlify CMS.`,
+    siteUrl: `https://mega-owl.netlify.com/`,
+    social: {
+      twitter: `smilingsmit`,
+    },
+  },
   plugins: [
     `gatsby-plugin-netlify-cms`,
     {
@@ -16,5 +26,5 @@ module.exports = {
       },
     },
     `gatsby-transformer-remark`,
-  ]
-};
+  ],
+}
