@@ -1,37 +1,43 @@
 import React from "react"
-import { Link } from "gatsby"
+import PropTypes from "prop-types"
+import { Link, StaticQuery, graphql } from "gatsby"
 
-class Layout extends React.Component {
-  render() {
-    const { location, title, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
-    let header
+// import "../style/site.scss"
 
-    if (location.pathname === rootPath) {
-      header = (
-        <h1>
-          <Link to={`/`}>{title}</Link>
-        </h1>
-      )
-    } else {
-      header = (
-        <h3>
-          <Link to={`/`}>{title}</Link>
-        </h3>
-      )
-    }
-    return (
-      <div>
-        <header>{header}</header>
-        <main>{children}</main>
-        <footer>
-          &copy; {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
-    )
-  }
+const Layout = ({ children }) => (
+  <StaticQuery
+    query={graphql`
+      query SiteTitleQuery {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+      }
+    `}
+    render={data => (
+      <>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/blog">Blogs</Link>
+            </li>
+          </ul>
+        </nav>
+
+        <hr />
+
+        <main className="page">{children}</main>
+      </>
+    )}
+  />
+)
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
 }
 
 export default Layout
