@@ -15,7 +15,7 @@
 ![GitHub forks](https://img.shields.io/github/forks/imsmit/gatsby-netlify?style=social)
 ![Twitter Follow](https://img.shields.io/twitter/follow/smilingsmit?style=social)
 
-###This is a gatsby hello-world + netlify-cms blog boilerplate. More on this soon.###
+### This is a gatsby hello-world + netlify-cms blog boilerplate. More on this soon.
 
 ## 💫 Deploy
 
