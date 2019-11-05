@@ -1,11 +1,14 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Layout from "../components/layout"
 
-const Blog = ({ data }) => {
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+
+const Blog = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges
   return (
-    <Layout>
+    <Layout location={location}>
+      <SEO title="Posts"></SEO>
       <div>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
@@ -24,7 +27,6 @@ const Blog = ({ data }) => {
           )
         })}
       </div>
-      <Link to="/">Go Home</Link>
     </Layout>
   )
 }

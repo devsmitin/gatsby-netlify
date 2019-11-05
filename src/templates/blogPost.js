@@ -1,13 +1,20 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Layout from "../components/layout"
 
-const BlogPost = ({ data, pageContext }) => {
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+
+const BlogPost = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
   const { previous, next } = pageContext
 
   return (
-    <Layout>
+    <Layout location={location}>
+      <SEO
+        title={post.frontmatter.title}
+        description={post.frontmatter.description || post.excerpt}
+      />
+
       <article>
         <header>
           <h1>{post.frontmatter.title}</h1>
@@ -16,21 +23,19 @@ const BlogPost = ({ data, pageContext }) => {
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
       </article>
 
-      <hr />
-
       <nav>
-        <ul>
+        <ul className="blog-nav">
           {previous && (
-            <li>
+            <li className="blog-nav-prev">
               <Link to={"blog" + previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
+                Previous Post: {previous.frontmatter.title}
               </Link>
             </li>
           )}
           {next && (
-            <li>
+            <li className="blog-nav-next">
               <Link to={"blog" + next.fields.slug} rel="next">
-                {next.frontmatter.title} →
+                Next Post: {next.frontmatter.title}
               </Link>
             </li>
           )}
