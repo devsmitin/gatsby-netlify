@@ -14,6 +14,7 @@ module.exports = {
     siteUrl: `https://mega-owl.netlify.com/`,
     social: {
       twitter: `smilingsmit`,
+      instagram: `smiling.smit`,
     },
   },
   plugins: [
@@ -25,7 +26,15 @@ module.exports = {
         name: `blog`,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Montserrat`],
+        display: "swap",
+      },
+    },
     `gatsby-transformer-remark`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sass`,
   ],
 }
