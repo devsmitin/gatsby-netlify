@@ -17,7 +17,7 @@ const BlogPost = ({ data, pageContext, location }) => {
 
       <article>
         <header>
-          <h1>{post.frontmatter.title}</h1>
+          <h1 className="post-title">{post.frontmatter.title}</h1>
           <p>{post.frontmatter.date}</p>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -26,19 +26,24 @@ const BlogPost = ({ data, pageContext, location }) => {
       <nav>
         <ul className="blog-nav">
           {previous && (
-            <li className="blog-nav-prev">
+            <li className="">
               <Link to={"blog" + previous.fields.slug} rel="prev">
                 Previous Post: {previous.frontmatter.title}
               </Link>
             </li>
           )}
           {next && (
-            <li className="blog-nav-next">
+            <li className="">
               <Link to={"blog" + next.fields.slug} rel="next">
                 Next Post: {next.frontmatter.title}
               </Link>
             </li>
           )}
+          <li className="">
+            <Link to="/blog/" rel="back">
+              All posts
+            </Link>
+          </li>
         </ul>
       </nav>
     </Layout>

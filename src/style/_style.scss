@@ -1,74 +1,90 @@
+html,
 body {
-  background-color: $bg-color;
-  font-family: Montserrat, sans-serif;
+  background-color: $color-bg;
 }
 
-h1 {
-  font-size: 2rem;
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
-  margin-top: 0;
+body {
+  color: $color-text;
+  font-family: $font-body;
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: normal;
+  font-kerning: normal;
+  font-feature-settings: "kern", "liga", "clig", "calt";
+  word-wrap: break-word;
+}
+
+h1,
+.h1 {
+  @include h1;
+}
+
+h2,
+.h2 {
+  @include h2;
+}
+
+h3,
+.h3 {
+  @include h3;
+}
+
+a {
+  color: $color-link;
 }
 
 .site-title {
-  font-size: 1.5rem;
-  line-height: 1;
-  font-weight: bold;
-  margin-top: 0;
-  margin-bottom: 1rem;
-  // text-align: center;
-}
-
-.site-nav {
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0 0 1rem;
-  background-color: rgba(#000, 0.1);
-  width: 100%;
-  // justify-content: center;
-  li {
-    a {
-      display: inline-block;
-      padding: 5px;
-      text-decoration: none;
-      &:hover {
-        background-color: rgba(#000, 0.1);
-      }
-    }
-  }
-}
-
-.blog-nav {
-  padding: 0.5rem;
-  background-color: rgba(#000, 0.1);
-  list-style: none;
-  margin-bottom: 1rem;
-  @extend .clearfix;
-  &-prev {
-    float: left;
-  }
-  &-next {
-    float: right;
-  }
+  // margin: 1rem 0;
   a {
+    color: $color-text;
     text-decoration: none;
   }
 }
 
-.clearfix {
-  &::after {
-    content: "";
-    display: block;
-    clear: both;
-  }
-}
+// .blog-nav {
+//   padding: 0.5rem;
+//   background-color: rgba(#000, 0.1);
+//   list-style: none;
+//   margin-bottom: 1rem;
+//   @include clearfix;
+//   &-prev {
+//     float: left;
+//   }
+//   &-next {
+//     float: right;
+//   }
+//   a {
+//     text-decoration: none;
+//   }
+// }
 
 .page-content {
-  max-width: 650px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 42rem;
+  padding: 1rem;
 }
 
 p {
   line-height: 1.6;
+}
+
+.post-card {
+  background-color: #fff;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border: 2px solid $color-accent;
+  box-shadow: 5px 5px rgba($color-accent, 0.5);
+  .post-link {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 900;
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+.post-title {
+  text-shadow: 5px 5px rgba($color-accent, 0.5);
 }

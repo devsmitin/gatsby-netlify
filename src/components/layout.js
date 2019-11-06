@@ -18,19 +18,15 @@ const Layout = ({ children, location }) => (
     render={data => (
       <div className="page-content">
         <nav>
-          {location.pathname === "/" || location.pathname === "/blog/" ? (
-            <h1 className="site-title">{data.site.siteMetadata.title}</h1>
+          {location.pathname === "/" ? (
+            <h1 className="site-title">
+              <Link to="/">{data.site.siteMetadata.title}</Link>
+            </h1>
           ) : (
-            <h2 className="site-title">{data.site.siteMetadata.title}</h2>
+            <h2 className="site-title">
+              <Link to="/">{data.site.siteMetadata.title}</Link>
+            </h2>
           )}
-          <ul className="site-nav">
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/blog/">My Blogs</Link>
-            </li>
-          </ul>
         </nav>
 
         <main className="page">{children}</main>

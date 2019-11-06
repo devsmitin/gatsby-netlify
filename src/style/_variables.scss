@@ -1,1 +1,38 @@
-$bg-color: #fff;
+$color-bg: #f7f7f7;
+$color-text: #333;
+$color-link: #04a07f;
+$color-accent: #04a07f;
+
+$font-body: "Merriweather", "Georgia", serif;
+$font-heading: "Montserrat", sans-serif;
+
+$font-size: 16px;
+$line-height: $font-size * 1.6;
+
+@mixin h1 {
+  font-family: $font-heading;
+  font-size: 3.5rem;
+  line-height: 1.2;
+  font-weight: 900;
+}
+
+@mixin h2 {
+  font-family: $font-heading;
+  font-size: 2rem;
+  line-height: 1.2;
+  font-weight: 900;
+}
+
+@mixin h3 {
+  // font-family: $font-heading;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
