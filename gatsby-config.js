@@ -5,10 +5,8 @@
  */
 
 module.exports = {
-  /* Your site config here */
   siteMetadata: {
-    // edit below
-    title: `The Blog`,
+    title: `The Post`,
     author: `Smit Modi`,
     description: `A personal blog with Netlify CMS.`,
     siteUrl: `https://mega-owl.netlify.com/`,
@@ -29,7 +27,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`Montserrat`],
+        fonts: [`Montserrat\:900`, `Merriweather\:300,400,700.900`],
         display: "swap",
       },
     },

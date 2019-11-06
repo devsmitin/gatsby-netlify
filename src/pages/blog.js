@@ -13,8 +13,8 @@ const Blog = ({ data, location }) => {
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
-            <div key={node.fields.slug}>
-              <h3>
+            <div key={node.fields.slug} className="post-card">
+              <h3 className="post-link">
                 <Link to={`blog${node.fields.slug}`}>{title}</Link>
               </h3>
               <small>{node.frontmatter.date}</small>
