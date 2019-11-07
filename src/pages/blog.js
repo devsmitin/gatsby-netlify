@@ -9,7 +9,7 @@ const Blog = ({ data, location }) => {
   return (
     <Layout location={location}>
       <SEO title="Posts"></SEO>
-      <div>
+      <div className="container mobile-feed">
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (

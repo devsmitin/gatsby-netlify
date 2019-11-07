@@ -1,4 +1,4 @@
-$color-bg: #f7f7f7;
+$color-bg: #fbfbfb;
 $color-text: #333;
 $color-link: #04a07f;
 $color-accent: #04a07f;
@@ -11,7 +11,7 @@ $line-height: $font-size * 1.6;
 
 @mixin h1 {
   font-family: $font-heading;
-  font-size: 3.5rem;
+  font-size: 3.2rem;
   line-height: 1.2;
   font-weight: 900;
 }
@@ -24,7 +24,6 @@ $line-height: $font-size * 1.6;
 }
 
 @mixin h3 {
-  // font-family: $font-heading;
   font-size: 1.5rem;
   font-weight: 700;
 }
@@ -35,4 +34,9 @@ $line-height: $font-size * 1.6;
     display: block;
     clear: both;
   }
+}
+
+.header {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }

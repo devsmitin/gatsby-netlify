@@ -18,8 +18,14 @@ const IndexPage = props => (
         `Gatsby Developer`,
       ]}
     />
-    <h2>Hello World!</h2>
-    <Link to="/blog/">Link to my blogs!</Link>
+    <div className="container">
+      <h2>
+        Hello, <del>World</del> Stranger!
+      </h2>
+    </div>
+    <div className="container">
+      <Link to="/blog/">Link to my blogs!</Link>
+    </div>
   </Layout>
 )
 
