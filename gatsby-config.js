@@ -6,7 +6,7 @@
 
 module.exports = {
   siteMetadata: {
-    title: `The Post`,
+    title: `The Post.`,
     author: `Smit Modi`,
     description: `A personal blog with Netlify CMS.`,
     siteUrl: `https://mega-owl.netlify.com/`,
@@ -34,5 +34,14 @@ module.exports = {
     `gatsby-transformer-remark`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/images`,
+        name: `blog`,
+      },
+    },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
   ],
 }

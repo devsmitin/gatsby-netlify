@@ -17,19 +17,23 @@ const Layout = ({ children, location }) => (
     `}
     render={data => (
       <div className="page-content">
-        <nav>
-          {location.pathname === "/" ? (
-            <h1 className="site-title">
-              <Link to="/">{data.site.siteMetadata.title}</Link>
-            </h1>
-          ) : (
-            <h2 className="site-title">
-              <Link to="/">{data.site.siteMetadata.title}</Link>
-            </h2>
-          )}
-        </nav>
+        <header>
+          <div className="container">
+            {location.pathname === "/" ? (
+              <h1 className="site-title">
+                <Link to="/">{data.site.siteMetadata.title}</Link>
+              </h1>
+            ) : (
+              <h2 className="site-title decorated">
+                <Link to="/">{data.site.siteMetadata.title}</Link>
+              </h2>
+            )}
+          </div>
+        </header>
 
-        <main className="page">{children}</main>
+        <main className="page">
+          <div className="container">{children}</div>
+        </main>
       </div>
     )}
   />
