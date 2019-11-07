@@ -16,8 +16,8 @@ const Layout = ({ children, location }) => (
       }
     `}
     render={data => (
-      <div className="page-content">
-        <header>
+      <main className="page">
+        <header className="header">
           <div className="container">
             {location.pathname === "/" ? (
               <h1 className="site-title">
@@ -31,10 +31,8 @@ const Layout = ({ children, location }) => (
           </div>
         </header>
 
-        <main className="page">
-          <div className="container">{children}</div>
-        </main>
-      </div>
+        <div className="page-content">{children}</div>
+      </main>
     )}
   />
 )

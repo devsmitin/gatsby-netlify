@@ -36,28 +36,52 @@ a {
   color: $color-link;
 }
 
+p {
+  line-height: 1.6;
+}
+
+.container {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 600px;
+  padding: 0 1rem;
+  &.mobile-feed {
+    @media (max-width: 767px) {
+      padding: 0;
+    }
+  }
+}
+
+.title-shadow {
+  text-shadow: 5px 5px rgba($color-accent, 0.5);
+}
+
 .site-title {
-  // margin: 1rem 0;
   a {
     color: $color-text;
     text-decoration: none;
   }
   &:not(.decorated) {
-    @extend .post-title;
+    @extend .title-shadow;
   }
 }
 
 .post-nav {
-  @media (max-width: 42rem) {
+  @media (max-width: 767px) {
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: #fff;
     margin: 0;
+    background-color: #fff;
     box-shadow: 0 -1px 10px rgba(#000, 0.15);
   }
-
+  @media (min-width: 768px) {
+    position: absolute;
+    top: 0;
+    right: 100%;
+  }
   .post-nav-list {
     list-style: none;
     display: flex;
@@ -69,46 +93,43 @@ a {
       flex: 1;
       text-align: center;
       width: 25%;
-      // &.posts-next {
-      //   order: 1;
-      // }
       > a,
       > span {
         text-decoration: none;
-        display: inline-block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 100%;
-        padding: 0.5rem;
+        padding: 1rem;
       }
       &.disabled {
-        background-color: #f0f0f0;
+        // background-color: rgba(#000, 0.07);
+        opacity: 0.25;
+        cursor: not-allowed;
+      }
+    }
+    @media (min-width: 768px) {
+      flex-direction: column;
+      margin-right: 1rem;
+      li {
+        width: 100%;
       }
     }
   }
   .nav-icon {
-    height: 20px;
-    width: 22px;
-    margin: 0 4px;
-    vertical-align: middle;
+    width: 20px;
   }
-}
-
-.container {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 42rem;
-  padding: 1rem;
-}
-
-p {
-  line-height: 1.6;
 }
 
 .post-card {
   background-color: #fff;
   padding: 1rem;
-  margin-bottom: 1.5rem;
-  border: 2px solid $color-accent;
-  box-shadow: 5px 5px rgba($color-accent, 0.5);
+  margin-bottom: 0.25rem;
+  border: 1px solid rgba(#000, 0.15);
+  @media (max-width: 600px) {
+    border-left: 0;
+    border-right: 0;
+  }
   .post-link {
     margin-top: 0;
     margin-bottom: 0.5rem;
@@ -120,8 +141,24 @@ p {
 }
 
 .post-wrapper {
-  margin-bottom: 2.5rem;
+  margin-bottom: 5rem;
+  .post-content {
+    p {
+      font-size: 1.2rem;
+      &:first-child {
+        &::first-letter {
+          font-size: 300%;
+          margin-right: 0.5rem;
+          float: left;
+          line-height: 1;
+        }
+      }
+    }
+  }
   .post-title {
-    text-shadow: 5px 5px rgba($color-accent, 0.5);
+    @extend .title-shadow;
+    @media (max-width: 360px) {
+      font-size: 2.5rem;
+    }
   }
 }

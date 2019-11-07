@@ -20,66 +20,73 @@ const BlogPost = ({ data, pageContext, location }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
+      <div className="container">
+        <article className="post-wrapper">
+          <header>
+            <h1 className="post-title">{post.frontmatter.title}</h1>
+            <p>{post.frontmatter.date}</p>
+          </header>
+          <hr />
+          <section
+            className="post-content"
+            dangerouslySetInnerHTML={{ __html: post.html }}
+          />
+        </article>
 
-      <article className="post-wrapper">
-        <header>
-          <h1 className="post-title">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
-        </header>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
-      </article>
-
-      <nav className="post-nav">
-        <ul className="post-nav-list">
-          <li className="posts-all">
-            <Link to={"/blog/"} rel="All posts" aria-label="All posts">
-              <img src={listGraphic} alt="All posts" className="nav-icon" />
-            </Link>
-          </li>
-
-          <li className="posts-share">
-            <span aria-label="No Next Post">
-              <img src={shareGraphic} alt="Share" className="nav-icon" />
-            </span>
-          </li>
-
-          {previous ? (
-            <li className="posts-prev">
-              <Link
-                to={"blog" + previous.fields.slug}
-                rel="prev"
-                aria-label="Previous Post: {previous.frontmatter.title}"
-              >
-                <img src={prevGraphic} alt="Previous" className="nav-icon" />
+        <nav className="post-nav">
+          <ul className="post-nav-list">
+            <li className="posts-all">
+              <Link to={"/blog/"} rel="All posts" aria-label="All posts">
+                <img src={listGraphic} alt="All posts" className="nav-icon" />
               </Link>
             </li>
-          ) : (
-            <li className="posts-prev disabled">
-              <span aria-label="No Previous Post">
-                <img src={prevGraphic} alt="Previous" className="nav-icon" />
-              </span>
-            </li>
-          )}
 
-          {next ? (
-            <li className="posts-next">
-              <Link
-                to={"blog" + next.fields.slug}
-                rel="next"
-                aria-label="Next Post: {next.frontmatter.title}"
-              >
-                <img src={nextGraphic} alt="Next" className="nav-icon" />
-              </Link>
-            </li>
-          ) : (
-            <li className="posts-next disabled">
+            <li className="posts-share">
               <span aria-label="No Next Post">
-                <img src={nextGraphic} alt="Next" className="nav-icon" />
+                <img src={shareGraphic} alt="Share" className="nav-icon" />
               </span>
             </li>
-          )}
-        </ul>
-      </nav>
+
+            {previous ? (
+              <li className="posts-prev">
+                <Link
+                  to={"blog" + previous.fields.slug}
+                  rel="prev"
+                  title={"Previous Post: " + previous.frontmatter.title}
+                  aria-label={"Previous Post: " + previous.frontmatter.title}
+                >
+                  <img src={prevGraphic} alt="Previous" className="nav-icon" />
+                </Link>
+              </li>
+            ) : (
+              <li className="posts-prev disabled">
+                <span aria-label="No Previous Post">
+                  <img src={prevGraphic} alt="Previous" className="nav-icon" />
+                </span>
+              </li>
+            )}
+
+            {next ? (
+              <li className="posts-next">
+                <Link
+                  to={"blog" + next.fields.slug}
+                  rel="next"
+                  title={"Next Post: " + next.frontmatter.title}
+                  aria-label={"Next Post: " + next.frontmatter.title}
+                >
+                  <img src={nextGraphic} alt="Next" className="nav-icon" />
+                </Link>
+              </li>
+            ) : (
+              <li className="posts-next disabled">
+                <span aria-label="No Next Post">
+                  <img src={nextGraphic} alt="Next" className="nav-icon" />
+                </span>
+              </li>
+            )}
+          </ul>
+        </nav>
+      </div>
     </Layout>
   )
 }
