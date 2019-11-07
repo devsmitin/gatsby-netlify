@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 html,
 body {
   background-color: $color-bg;
@@ -39,26 +42,57 @@ a {
     color: $color-text;
     text-decoration: none;
   }
+  &:not(.decorated) {
+    @extend .post-title;
+  }
 }
 
-// .blog-nav {
-//   padding: 0.5rem;
-//   background-color: rgba(#000, 0.1);
-//   list-style: none;
-//   margin-bottom: 1rem;
-//   @include clearfix;
-//   &-prev {
-//     float: left;
-//   }
-//   &-next {
-//     float: right;
-//   }
-//   a {
-//     text-decoration: none;
-//   }
-// }
+.post-nav {
+  @media (max-width: 42rem) {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    margin: 0;
+    box-shadow: 0 -1px 10px rgba(#000, 0.15);
+  }
 
-.page-content {
+  .post-nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
+    li {
+      display: block;
+      flex: 1;
+      text-align: center;
+      width: 25%;
+      // &.posts-next {
+      //   order: 1;
+      // }
+      > a,
+      > span {
+        text-decoration: none;
+        display: inline-block;
+        width: 100%;
+        padding: 0.5rem;
+      }
+      &.disabled {
+        background-color: #f0f0f0;
+      }
+    }
+  }
+  .nav-icon {
+    height: 20px;
+    width: 22px;
+    margin: 0 4px;
+    vertical-align: middle;
+  }
+}
+
+.container {
   margin-left: auto;
   margin-right: auto;
   max-width: 42rem;
@@ -85,6 +119,9 @@ p {
   }
 }
 
-.post-title {
-  text-shadow: 5px 5px rgba($color-accent, 0.5);
+.post-wrapper {
+  margin-bottom: 2.5rem;
+  .post-title {
+    text-shadow: 5px 5px rgba($color-accent, 0.5);
+  }
 }
