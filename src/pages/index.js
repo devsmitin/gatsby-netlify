@@ -19,9 +19,10 @@ const IndexPage = props => (
       ]}
     />
     <div className="container">
-      <h2>
-        Hello, <del>World</del> Stranger!
-      </h2>
+      <h2>Hello, World!</h2>
+      <p className="h2">
+        I'm Smit Modi, a frontend developer from Ahmedabad, India.
+      </p>
     </div>
     <div className="container">
       <Link to="/blog/">Link to my blogs!</Link>

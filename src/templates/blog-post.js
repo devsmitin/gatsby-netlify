@@ -1,14 +1,14 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-// import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Share from "../components/share"
 
 import prevGraphic from "../images/icon-prev.svg"
 import nextGraphic from "../images/icon-next.svg"
 import listGraphic from "../images/icon-list-square.svg"
-import shareGraphic from "../images/icon-share.svg"
+import homeGraphic from "../images/icon-home.svg"
 
 const BlogPost = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -25,6 +25,9 @@ const BlogPost = ({ data, pageContext, location }) => {
           <header>
             <h1 className="post-title">{post.frontmatter.title}</h1>
             <p>{post.frontmatter.date}</p>
+            <div>
+              <Share shareTitle={post.frontmatter.title} />
+            </div>
           </header>
           <hr />
           <section
@@ -35,6 +38,12 @@ const BlogPost = ({ data, pageContext, location }) => {
 
         <nav className="post-nav">
           <ul className="post-nav-list">
+            <li className="posts-share show-mobile">
+              <Link to="/" rel="home" title="Home" aria-label="Home">
+                <img src={homeGraphic} alt="Home" className="nav-icon" />
+              </Link>
+            </li>
+
             <li className="posts-all">
               <Link
                 to={"/blog/"}
@@ -44,12 +53,6 @@ const BlogPost = ({ data, pageContext, location }) => {
               >
                 <img src={listGraphic} alt="All posts" className="nav-icon" />
               </Link>
-            </li>
-
-            <li className="posts-share">
-              <span aria-label="No Next Post">
-                <img src={shareGraphic} alt="Share" className="nav-icon" />
-              </span>
             </li>
 
             {previous ? (
