@@ -17,8 +17,9 @@ const Blog = ({ data, location }) => {
               <h3 className="post-link">
                 <Link to={`blog${node.fields.slug}`}>{title}</Link>
               </h3>
-              <small>{node.frontmatter.date}</small>
+              <small className="post-date">{node.frontmatter.date}</small>
               <p
+                className="post-desc"
                 dangerouslySetInnerHTML={{
                   __html: node.frontmatter.description || node.excerpt,
                 }}

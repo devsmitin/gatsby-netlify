@@ -40,3 +40,9 @@ $line-height: $font-size * 1.6;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
 }
+
+.show-mobile {
+  @media (min-width: 768px) {
+    display: none;
+  }
+}

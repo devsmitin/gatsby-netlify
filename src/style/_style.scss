@@ -32,12 +32,18 @@ h3,
   @include h3;
 }
 
+p {
+  line-height: 1.6;
+  margin-top: 0.5rem;
+}
+
 a {
   color: $color-link;
 }
 
-p {
-  line-height: 1.6;
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .container {
@@ -47,7 +53,7 @@ p {
   max-width: 600px;
   padding: 0 1rem;
   &.mobile-feed {
-    @media (max-width: 767px) {
+    @media (max-width: 600px) {
       padding: 0;
     }
   }
@@ -89,7 +95,6 @@ p {
     margin: 0;
     padding: 0;
     li {
-      display: block;
       flex: 1;
       text-align: center;
       width: 25%;
@@ -124,18 +129,24 @@ p {
 .post-card {
   background-color: #fff;
   padding: 1rem;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
   border: 1px solid rgba(#000, 0.15);
+  border-left: 4px solid rgba($color-accent, 0.5);
   @media (max-width: 600px) {
-    border-left: 0;
     border-right: 0;
   }
-  .post-link {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    font-weight: 900;
-    a {
-      text-decoration: none;
+  .post {
+    &-link {
+      margin-top: 0;
+      margin-bottom: 0.25rem;
+      font-weight: 900;
+      a {
+        text-decoration: none;
+      }
+    }
+    &-date,
+    &-desc {
+      margin-bottom: 0;
     }
   }
 }
@@ -145,14 +156,6 @@ p {
   .post-content {
     p {
       font-size: 1.2rem;
-      &:first-child {
-        &::first-letter {
-          font-size: 300%;
-          margin-right: 0.5rem;
-          float: left;
-          line-height: 1;
-        }
-      }
     }
   }
   .post-title {
@@ -160,5 +163,24 @@ p {
     @media (max-width: 360px) {
       font-size: 2.5rem;
     }
+  }
+}
+
+// .social-share
+.social-share-list {
+  padding: 0;
+  list-style: none;
+  li {
+    display: inline-block;
+    &:not(:last-child) {
+      margin-right: 0.5rem;
+    }
+  }
+  .social-share-icon {
+    height: 2rem;
+    width: 2rem;
+    padding: 0.125rem;
+    border: 2px solid #333;
+    opacity: 0.75;
   }
 }
