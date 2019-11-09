@@ -47,7 +47,7 @@ p {
   max-width: 600px;
   padding: 0 1rem;
   &.mobile-feed {
-    @media (max-width: 767px) {
+    @media (max-width: 600px) {
       padding: 0;
     }
   }
@@ -145,14 +145,6 @@ p {
   .post-content {
     p {
       font-size: 1.2rem;
-      &:first-child {
-        &::first-letter {
-          font-size: 300%;
-          margin-right: 0.5rem;
-          float: left;
-          line-height: 1;
-        }
-      }
     }
   }
   .post-title {

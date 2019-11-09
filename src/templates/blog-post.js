@@ -36,7 +36,12 @@ const BlogPost = ({ data, pageContext, location }) => {
         <nav className="post-nav">
           <ul className="post-nav-list">
             <li className="posts-all">
-              <Link to={"/blog/"} rel="All posts" aria-label="All posts">
+              <Link
+                to={"/blog/"}
+                rel="All posts"
+                title="All posts"
+                aria-label="All posts"
+              >
                 <img src={listGraphic} alt="All posts" className="nav-icon" />
               </Link>
             </li>
