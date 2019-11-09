@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import fbIcon from "../images/icon-facebook.svg"
 import twitIcon from "../images/icon-twitter.svg"
 
-const Share = ({ shareTitle }) => {
+const Share = ({ shareTitle, location }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -18,7 +18,7 @@ const Share = ({ shareTitle }) => {
       }
     `
   )
-  const link = window.location.href
+  const link = location.pathname
   const title = shareTitle ? shareTitle : `This post is awesome`
   const handle = site.siteMetadata.social.twitter
   const via = `&via=` + handle

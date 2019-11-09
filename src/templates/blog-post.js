@@ -26,7 +26,7 @@ const BlogPost = ({ data, pageContext, location }) => {
             <h1 className="post-title">{post.frontmatter.title}</h1>
             <p>{post.frontmatter.date}</p>
             <div>
-              <Share shareTitle={post.frontmatter.title} />
+              <Share location={location} shareTitle={post.frontmatter.title} />
             </div>
           </header>
           <hr />
