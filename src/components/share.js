@@ -10,6 +10,7 @@ const Share = ({ shareTitle, location }) => {
       query {
         site {
           siteMetadata {
+            siteUrl
             social {
               twitter
             }
@@ -18,7 +19,7 @@ const Share = ({ shareTitle, location }) => {
       }
     `
   )
-  const link = location.pathname
+  const link = site.siteMetadata.siteUrl + location.pathname
   const title = shareTitle ? shareTitle : `This post is awesome`
   const handle = site.siteMetadata.social.twitter
   const via = `&via=` + handle
