@@ -13,10 +13,8 @@ const IndexPage = props => (
         `Smit`,
         `Smit Modi`,
         `imsmit`,
-        `Front-end`,
-        `Developer`,
-        `Designer`,
-        `Gatsby Developer`,
+        `Front-end Developer`,
+        `Gatsby JS Developer`,
       ]}
     />
     <div className="container">
@@ -25,7 +23,7 @@ const IndexPage = props => (
         I'm Smit Modi, a frontend developer from Ahmedabad, India.
       </p>
       <p className="h3">
-        You can read my blogs <Link to="/blog/">here</Link>
+        You can read my blogs <Link to="/blog/">here</Link>.
       </p>
     </div>
     <div className="image-wrapper-container">
