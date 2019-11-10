@@ -18,7 +18,7 @@ const BlogPost = ({ data, pageContext, location }) => {
     <Layout location={location}>
       <SEO
         title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
+        description={post.excerpt || post.frontmatter.description}
       />
       <div className="container">
         <article className="post-wrapper">
