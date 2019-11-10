@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Image from "../components/image"
 
 const IndexPage = props => (
   <Layout location={props.location}>
@@ -23,9 +24,14 @@ const IndexPage = props => (
       <p className="h2">
         I'm Smit Modi, a frontend developer from Ahmedabad, India.
       </p>
+      <p className="h3">
+        You can read my blogs <Link to="/blog/">here</Link>
+      </p>
     </div>
-    <div className="container">
-      <Link to="/blog/">Link to my blogs!</Link>
+    <div className="image-wrapper-container">
+      <div className="image-wrapper">
+        <Image />
+      </div>
     </div>
   </Layout>
 )

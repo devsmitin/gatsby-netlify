@@ -15,7 +15,9 @@ const Blog = ({ data, location }) => {
           return (
             <div key={node.fields.slug} className="post-card">
               <h3 className="post-link">
-                <Link to={`blog${node.fields.slug}`}>{title}</Link>
+                <Link to={`blog${node.fields.slug}`} className="filled-link">
+                  {title}
+                </Link>
               </h3>
               <small className="post-date">{node.frontmatter.date}</small>
               <p

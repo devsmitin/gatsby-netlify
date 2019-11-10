@@ -6,10 +6,10 @@
 
 module.exports = {
   siteMetadata: {
-    title: `The Post.`,
+    title: `The Possst`,
     author: `Smit Modi`,
     description: `A personal blog with Netlify CMS.`,
-    siteUrl: `https://mega-owl.netlify.com/`,
+    siteUrl: `https://possst.netlify.com/`,
     social: {
       twitter: `smilingsmit`,
       instagram: `smiling.smit`,

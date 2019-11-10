@@ -46,19 +46,6 @@ hr {
   margin-bottom: 1rem;
 }
 
-.container {
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 600px;
-  padding: 0 1rem;
-  &.mobile-feed {
-    @media (max-width: 600px) {
-      padding: 0;
-    }
-  }
-}
-
 .title-shadow {
   text-shadow: 5px 5px rgba($color-accent, 0.5);
 }
@@ -108,7 +95,6 @@ hr {
         padding: 1rem;
       }
       &.disabled {
-        // background-color: rgba(#000, 0.07);
         opacity: 0.25;
         cursor: not-allowed;
       }
@@ -126,13 +112,18 @@ hr {
   }
 }
 
+// post list
 .post-card {
+  position: relative;
   background-color: #fff;
   padding: 1rem;
   margin-bottom: 0.5rem;
-  border: 1px solid rgba(#000, 0.15);
+  border: 1px solid rgba(#000, 0.1);
   border-left: 4px solid rgba($color-accent, 0.5);
-  @media (max-width: 600px) {
+  &:hover {
+    border-left-color: rgba($color-accent, 1);
+  }
+  @media (max-width: 599px) {
     border-right: 0;
   }
   .post {
@@ -140,7 +131,7 @@ hr {
       margin-top: 0;
       margin-bottom: 0.25rem;
       font-weight: 900;
-      a {
+      a:not(:hover) {
         text-decoration: none;
       }
     }
@@ -151,6 +142,7 @@ hr {
   }
 }
 
+// main post/article
 .post-wrapper {
   margin-bottom: 5rem;
   .post-content {
@@ -166,7 +158,7 @@ hr {
   }
 }
 
-// .social-share
+// .social-share list
 .social-share-list {
   padding: 0;
   list-style: none;
@@ -182,5 +174,16 @@ hr {
     padding: 0.125rem;
     border: 2px solid #333;
     opacity: 0.75;
+  }
+}
+
+.filled-link {
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
   }
 }
