@@ -19,8 +19,10 @@ const IndexPage = props => (
     />
     <div className="container">
       <h2>Hello, World!</h2>
-      <p className="h2">
-        I'm Smit Modi, a frontend developer from Ahmedabad, India.
+      <p className="h2">My name is Smit Modi</p>
+      <p className="h3">
+        I am a frontend web developer based in Ahmedabad, India. I love art,
+        design, tech, travelling and the Internet.
       </p>
       <p className="h3">
         You can read my blogs <Link to="/blog/">here</Link>.
