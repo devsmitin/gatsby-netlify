@@ -32,6 +32,11 @@ h3,
   @include h3;
 }
 
+h4,
+.h4 {
+  @include h4;
+}
+
 p {
   line-height: 1.6;
   margin-top: 0.5rem;
