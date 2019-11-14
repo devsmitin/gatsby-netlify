@@ -20,18 +20,50 @@ const IndexPage = props => (
     <div className="container">
       <h2>Hello, World!</h2>
       <p className="h2">My name is Smit Modi</p>
-      <p className="h3">
+      <p className="h4">
         I am a frontend web developer based in Ahmedabad, India. I love art,
         design, tech, travelling and the Internet.
-      </p>
-      <p className="h3">
-        You can read my blogs <Link to="/blog/">here</Link>.
       </p>
     </div>
     <div className="image-wrapper-container">
       <div className="image-wrapper">
         <Image />
       </div>
+    </div>
+    <div className="container">
+      <h3 className="h4">At this moment:</h3>
+      <ul>
+        <li>
+          I am a full-time Frontend web developer at{" "}
+          <b>
+            <a href="https://www.lucentinnovation.com/" target="_blank">
+              Lucent Innovation
+            </a>
+          </b>
+        </li>
+      </ul>
+      <h3 className="h4">Some time ago:</h3>
+      <ul>
+        <li>
+          I was a Frontend web developer at a start-up called{" "}
+          <b>
+            <a href="https://www.wildtigers.space/" target="_blank">
+              The WildTigers Technologies
+            </a>
+          </b>
+        </li>
+        <li>
+          Started my career as a Frontend developer at{" "}
+          <b>
+            <a href="https://www.multidots.com/" target="_blank">
+              Multidots Solutions
+            </a>
+          </b>
+        </li>
+      </ul>
+      <p className="h3">
+        You can read my blogs <Link to="/blog/">here</Link>.
+      </p>
     </div>
   </Layout>
 )
