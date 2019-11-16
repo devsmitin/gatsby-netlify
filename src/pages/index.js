@@ -21,8 +21,8 @@ const IndexPage = props => (
       <Image />
     </div>
     <div className="main-container">
-      <h2>Hello, World!</h2>
-      <p className="h2">My name is Smit Modi</p>
+      <h2 className="h1">Hello, World!</h2>
+      <p className="h2">My name is Smit.</p>
       <p className="h4">
         I am a frontend web developer based in Ahmedabad, India. I love art,
         design, tech, travelling and the Internet.

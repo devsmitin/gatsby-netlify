@@ -3,13 +3,19 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Image from "../components/image"
 
 const Blog = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges
   return (
     <Layout location={location}>
       <SEO title="Posts"></SEO>
-      <div className="container mobile-feed">
+      <div className="image-container">
+        <Image />
+      </div>
+      <div className="main-container">
+        <h1 className="page-title">Blogs</h1>
+        <hr />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
