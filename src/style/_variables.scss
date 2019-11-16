@@ -9,6 +9,8 @@ $font-heading: "Montserrat", sans-serif;
 $font-size: 16px;
 $line-height: $font-size * 1.6;
 
+$header-width: 80px;
+
 @mixin h1 {
   font-family: $font-heading;
   font-size: 3.2rem;

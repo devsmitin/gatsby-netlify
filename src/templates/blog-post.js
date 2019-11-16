@@ -22,7 +22,9 @@ const BlogPost = ({ data, pageContext, location }) => {
         description={post.excerpt || post.frontmatter.description}
       />
       <div className="image-container">
-        <Image />
+        <div className="image-wrapper">
+          <img src={post.frontmatter.cover} class="post-image" alt={post.frontmatter.title} />
+        </div>
       </div>
       <div className="main-container">
         <article className="post-wrapper">
@@ -119,6 +121,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        cover
         date(formatString: "MMMM DD, YYYY")
       }
     }
