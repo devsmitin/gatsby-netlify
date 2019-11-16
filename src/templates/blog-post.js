@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Share from "../components/share"
+import Image from "../components/image"
 
 import prevGraphic from "../images/icon-prev.svg"
 import nextGraphic from "../images/icon-next.svg"
@@ -20,13 +21,16 @@ const BlogPost = ({ data, pageContext, location }) => {
         title={post.frontmatter.title}
         description={post.excerpt || post.frontmatter.description}
       />
-      <div className="container">
+      <div className="image-container">
+        <Image />
+      </div>
+      <div className="main-container">
         <article className="post-wrapper">
           <header>
             <h1 className="post-title">{post.frontmatter.title}</h1>
             <p>{post.frontmatter.date}</p>
             <div>
-              <Share location={location} shareTitle={post.frontmatter.title} />
+              {/* <Share location={location} shareTitle={post.frontmatter.title} /> */}
             </div>
           </header>
           <hr />
@@ -36,7 +40,7 @@ const BlogPost = ({ data, pageContext, location }) => {
           />
         </article>
 
-        <nav className="post-nav">
+        {/* <nav className="post-nav">
           <ul className="post-nav-list">
             <li className="posts-share show-mobile">
               <Link to="/" rel="home" title="Home" aria-label="Home">
@@ -93,7 +97,7 @@ const BlogPost = ({ data, pageContext, location }) => {
               </li>
             )}
           </ul>
-        </nav>
+        </nav> */}
       </div>
     </Layout>
   )
