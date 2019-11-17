@@ -1,8 +1,8 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import fbIcon from "../images/icon-facebook.svg"
-import twitIcon from "../images/icon-twitter.svg"
+import facebookIcon from "../images/icon-facebook.svg"
+import twittweIcon from "../images/icon-twitter.svg"
 
 const Share = ({ shareTitle, location }) => {
   const { site } = useStaticQuery(
@@ -23,32 +23,39 @@ const Share = ({ shareTitle, location }) => {
   const title = shareTitle ? shareTitle : `This post is awesome`
   const handle = site.siteMetadata.social.twitter
   const via = `&via=` + handle
-  const fb_link = `https://www.facebook.com/sharer/sharer.php?u=` + link
+  const facebook_link = `https://www.facebook.com/sharer/sharer.php?u=` + link
   const twitter_link =
     `https://twitter.com/intent/tweet?url=` + link + `&text=` + title
 
   return (
-    <ul className="social-share-list">
-      <li>
-        <a href={fb_link} title="Share on Facebook" target="_blank">
-          <img src={fbIcon} alt="facebook icon" className="social-share-icon" />
-        </a>
-      </li>
+    <div className="social-share-widget">
+      <span>Share this post:</span>
+      <ul className="social-share-list">
+        <li>
+          <a href={facebook_link} title="Share on Facebook" target="_blank">
+            <img
+              src={facebookIcon}
+              alt="facebook icon"
+              className="social-share-icon"
+            />
+          </a>
+        </li>
 
-      <li>
-        <a
-          href={handle ? twitter_link + via : twitter_link}
-          title="Share on Twitter"
-          target="_blank"
-        >
-          <img
-            src={twitIcon}
-            alt="twitter icon"
-            className="social-share-icon"
-          />
-        </a>
-      </li>
-    </ul>
+        <li>
+          <a
+            href={handle ? twitter_link + via : twitter_link}
+            title="Share on Twitter"
+            target="_blank"
+          >
+            <img
+              src={twittweIcon}
+              alt="twitter icon"
+              className="social-share-icon"
+            />
+          </a>
+        </li>
+      </ul>
+    </div>
   )
 }
 
