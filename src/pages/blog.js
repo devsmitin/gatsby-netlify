@@ -13,15 +13,17 @@ const Blog = ({ data, location }) => {
       <div className="image-container">
         <Image />
       </div>
-      <div className="main-container">
-        <h1 className="page-title">Blogs</h1>
-        <hr />
+      <section className="main-container">
+        <header className="page-header hide-mobile">
+          <h1 className="page-title">Blogs</h1>
+          <hr />
+        </header>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
             <div key={node.fields.slug} className="post-card">
               <h3 className="post-link">
-                <Link to={`blog${node.fields.slug}`} className="filled-link">
+                <Link to={`blog${node.fields.slug}`} className="abs-link">
                   {title}
                 </Link>
               </h3>
@@ -35,7 +37,7 @@ const Blog = ({ data, location }) => {
             </div>
           )
         })}
-      </div>
+      </section>
     </Layout>
   )
 }
