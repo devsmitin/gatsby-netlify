@@ -24,8 +24,9 @@ const IndexPage = props => (
       <h2 className="h1">Hello, World!</h2>
       <p className="h2">My name is Smit.</p>
       <p className="h4">
-        I am a frontend web developer based in Ahmedabad, India. I love art,
-        design, tech, travelling and the Internet.
+        I am a frontend web developer based in Ahmedabad, India. I make the
+        things that you love to see and interact with on web. I'm also into art,
+        design, tech, travelling and cool things on the Internet.
       </p>
       <h3 className="h4">At this moment:</h3>
       <ul>

@@ -22,7 +22,13 @@ const BlogPost = ({ data, pageContext, location }) => {
         description={post.excerpt || post.frontmatter.description}
       />
       <div className="image-container">
-        <Image />
+        <div className="image-wrapper">
+          <img
+            src={post.frontmatter.cover}
+            class="post-image"
+            alt={post.frontmatter.title}
+          />
+        </div>
       </div>
       <div className="main-container">
         <article className="post-wrapper">
@@ -30,7 +36,7 @@ const BlogPost = ({ data, pageContext, location }) => {
             <h1 className="post-title">{post.frontmatter.title}</h1>
             <p>{post.frontmatter.date}</p>
             <div>
-              {/* <Share location={location} shareTitle={post.frontmatter.title} /> */}
+              <Share location={location} shareTitle={post.frontmatter.title} />
             </div>
           </header>
           <hr />
@@ -119,6 +125,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        cover
         date(formatString: "MMMM DD, YYYY")
       }
     }

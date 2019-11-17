@@ -9,11 +9,16 @@ $font-heading: "Montserrat", sans-serif;
 $font-size: 16px;
 $line-height: $font-size * 1.6;
 
+$header-width: 80px;
+
 @mixin h1 {
   font-family: $font-heading;
   font-size: 3.2rem;
   line-height: 1.2;
   font-weight: 900;
+  @media (max-width: 767px) {
+    font-size: 2.8rem;
+  }
 }
 
 @mixin h2 {
@@ -62,6 +67,11 @@ $line-height: $font-size * 1.6;
   }
 }
 
+.hide-mobile {
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
 .show-mobile {
   @media (min-width: 768px) {
     display: none;
@@ -72,25 +82,13 @@ $line-height: $font-size * 1.6;
   text-align: center;
 }
 
-.image-wrapper {
-  width: 980px;
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  overflow: hidden;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px 0px,
-    rgba(0, 0, 0, 0.1) 0px 1px 2px 0px, rgba(0, 0, 0, 0.25) 0px 20px 40px 0px;
-  &-container {
-    padding: 3rem;
-    &.with-background {
-      background-color: $color-accent;
-      padding: 0;
-      @media (min-width: 600px) {
-        padding: 3rem;
-      }
-      @media (min-width: 768px) {
-        padding: 5rem;
-      }
-    }
+.abs-link {
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
   }
 }
