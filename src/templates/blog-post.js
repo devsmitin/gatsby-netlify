@@ -21,6 +21,7 @@ const BlogPost = ({ data, pageContext, location }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
         image={post.frontmatter.cover}
+        location={location}
       />
       <div className="image-container">
         <div className="image-wrapper">

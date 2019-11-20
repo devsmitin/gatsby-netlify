@@ -16,6 +16,7 @@ const IndexPage = props => (
         `Front-end Developer`,
         `Gatsby JS Developer`,
       ]}
+      location={props.location}
     />
     <div className="image-container">
       <Image />

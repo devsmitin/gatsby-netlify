@@ -9,7 +9,10 @@ const Blog = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges
   return (
     <Layout location={location}>
-      <SEO title="Posts"></SEO>
+      <SEO 
+        title="Posts"
+        location={location}
+      />
       <div className="image-container">
         <Image />
       </div>
