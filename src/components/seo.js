@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, title, image }) {
+function SEO({ description, lang, meta, title, image, location }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -18,6 +18,7 @@ function SEO({ description, lang, meta, title, image }) {
           siteMetadata {
             title
             description
+            siteUrl
             image
             author
           }
@@ -27,7 +28,8 @@ function SEO({ description, lang, meta, title, image }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const ogImg = image || site.siteMetadata.image
+  const metaImg = image || site.siteMetadata.image
+  const metaLink = site.siteMetadata.siteUrl + location.pathname
 
   return (
     <Helmet
@@ -42,6 +44,14 @@ function SEO({ description, lang, meta, title, image }) {
           content: metaDescription,
         },
         {
+          property: `og:type`,
+          content: `website`,
+        },
+        {
+          property: `og:url`,
+          content: metaLink,
+        },
+        {
           property: `og:title`,
           content: title,
         },
@@ -50,20 +60,16 @@ function SEO({ description, lang, meta, title, image }) {
           content: metaDescription,
         },
         {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
           property: `og:image`,
-          content: ogImg,
+          content: metaImg,
         },
         {
           name: `twitter:card`,
-          content: `summary`,
+          content: `summary_large_image`,
         },
         {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          property: `twitter:url`,
+          content: metaLink,
         },
         {
           name: `twitter:title`,
@@ -72,6 +78,14 @@ function SEO({ description, lang, meta, title, image }) {
         {
           name: `twitter:description`,
           content: metaDescription,
+        },
+        {
+          name: `twitter:image`,
+          content: metaImg,
+        },
+        {
+          name: `twitter:creator`,
+          content: site.siteMetadata.author,
         },
       ].concat(meta)}
     />
