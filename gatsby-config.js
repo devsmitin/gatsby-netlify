@@ -9,6 +9,7 @@ module.exports = {
     title: `Smit!`,
     author: `Smit Modi`,
     description: `A personal blog with Netlify CMS.`,
+    image: '/static/66dac8c7d0664d6b0f784ddd4f9e7b54/5840c/image.jpg',
     siteUrl: `https://possst.netlify.com/`,
     social: {
       twitter: `smilingsmit`,
