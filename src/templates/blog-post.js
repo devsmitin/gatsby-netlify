@@ -19,13 +19,14 @@ const BlogPost = ({ data, pageContext, location }) => {
     <Layout location={location}>
       <SEO
         title={post.frontmatter.title}
-        description={post.excerpt || post.frontmatter.description}
+        description={post.frontmatter.description || post.excerpt}
+        image={post.frontmatter.cover}
       />
       <div className="image-container">
         <div className="image-wrapper">
           <img
             src={post.frontmatter.cover}
-            class="post-image"
+            className="post-image"
             alt={post.frontmatter.title}
           />
         </div>
@@ -126,6 +127,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         cover
+        description
         date(formatString: "MMMM DD, YYYY")
       }
     }
