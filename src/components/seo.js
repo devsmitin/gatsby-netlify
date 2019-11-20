@@ -28,7 +28,7 @@ function SEO({ description, lang, meta, title, image, location }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const metaImg = image || site.siteMetadata.image
+  const metaImg = site.siteMetadata.siteUrl + (image || site.siteMetadata.image)
   const metaLink = site.siteMetadata.siteUrl + location.pathname
 
   return (
