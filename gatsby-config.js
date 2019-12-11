@@ -9,7 +9,7 @@ module.exports = {
     title: `Smit!`,
     author: `Smit Modi`,
     description: `A personal blog with Netlify CMS.`,
-    image: `https://imsmit-dev.netlify.com/static/66dac8c7d0664d6b0f784ddd4f9e7b54/5840c/image.jpg`,
+    image: `/static/66dac8c7d0664d6b0f784ddd4f9e7b54/5840c/image.jpg`,
     siteUrl: `https://imsmit-dev.netlify.com`,
     social: {
       twitter: `smilingsmit`,
@@ -47,6 +47,13 @@ module.exports = {
       options: {
         path: `${__dirname}/src/images`,
         name: `blog`,
+      },
+    },
+    {
+      resolve: "gatsby-remark-instagram-embed",
+      options: {
+        width: 320,
+        height: 320,
       },
     },
     `gatsby-plugin-sharp`,
