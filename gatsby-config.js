@@ -49,6 +49,13 @@ module.exports = {
         name: `blog`,
       },
     },
+    {
+      resolve: "gatsby-remark-instagram-embed",
+      options: {
+        width: 320,
+        height: 320,
+      },
+    },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     // `gatsby-plugin-offline`,
